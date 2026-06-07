@@ -70,4 +70,27 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+// Servicio para eliminar un equipo
+router.delete("/:id", async (req, res) => {
+  try {
+
+    await Equipo.findByIdAndDelete(
+      req.params.id
+    );
+
+    res.json({
+      mensaje: "Equipo eliminado correctamente"
+    });
+
+  } catch (error) {
+
+    console.log(error);
+
+    res.status(500).json({
+      mensaje: "Error al eliminar equipo"
+    });
+
+  }
+});
+
 module.exports = router;

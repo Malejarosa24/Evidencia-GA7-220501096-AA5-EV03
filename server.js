@@ -21,11 +21,13 @@ mongoose.connect(
 const usuarioRoutes = require("./routes/usuarioRoutes");
 const ticketRoutes = require("./routes/ticketRoutes");
 const equipoRoutes = require("./routes/equipoRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 // Rutas de la API
 app.use("/api/usuarios", usuarioRoutes);
 app.use("/api/tickets", ticketRoutes);
 app.use("/api/equipos", equipoRoutes);
+app.use("/api/auth", authRoutes);
 
 // Puerto donde se ejecutará el servidor
 const PORT = 3000;

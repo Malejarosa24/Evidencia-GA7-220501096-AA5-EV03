@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-// Modelo para guardar los equipos tecnológicos
+// Modelo para guardar los equipos tecnológicos de la empresa
 const equipoSchema = new mongoose.Schema({
 
     codigoEquipo: {

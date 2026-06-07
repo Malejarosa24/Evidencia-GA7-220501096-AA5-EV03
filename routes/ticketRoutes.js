@@ -3,6 +3,8 @@ const router = express.Router();
 
 const Ticket = require("../models/Ticket");
 
+console.log(Ticket); 
+
 // Servicio para crear un ticket de soporte
 router.post("/", async (req, res) => {
 try {
@@ -66,6 +68,25 @@ try {
 
 }
 
+});
+
+// Servicio para eliminar un ticket
+router.delete("/:id", async (req, res) => {
+try {
+
+    await Ticket.findByIdAndDelete(req.params.id);
+
+    res.json({
+        mensaje: "Ticket eliminado correctamente"
+    });
+
+} catch (error) {
+
+    res.status(500).json({
+        mensaje: "Error al eliminar el ticket"
+    });
+
+}
 });
 
 module.exports = router;
